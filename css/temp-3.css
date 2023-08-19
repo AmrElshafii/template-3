@@ -96,7 +96,10 @@ header nav ul img {
 }
 
 header nav ul.mainmenu li div.megamenu {
-    /* display: none; */
+    display: none;
+}
+
+header nav ul li a.megamenu:hover + div.megamenu {
     display: flex;
     position: absolute;
     top: 150px;
@@ -106,18 +109,6 @@ header nav ul.mainmenu li div.megamenu {
     margin: 0% 25%;
     justify-content: space-between;
 }
-
-header nav ul.mainmenu li div.megamenu ul {
-}
-
-/* header nav ul li a.megamenu:hover + div.megamenu {
-    display: flex;
-    position: absolute;
-    top: 150px;
-    left: 20px;
-    width: 70%;
-    margin: auto;
-} */
 
 header nav ul.mainmenu li div.megamenu img {
     width: 350px;
@@ -168,3 +159,46 @@ header nav ul.mainmenu li div.megamenu img {
         margin: 0px 7px;
     }
 }
+
+/* start landing */
+div.landing {
+    height: 100vh;
+}
+
+div.landing div.landing-cont {
+    display: flex;
+    position: relative;
+    padding: 60px;
+    height: 90%;
+}
+
+div.landing img {
+    width: 350px;
+    height: 350px;
+}
+
+div.landing div.landing-cont::after {
+    content: "";
+    position: absolute;
+    top: -110px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background-color: rgb(212, 212, 212);
+    transform: skewy(-20deg);
+    -webkit-transform: skewy(-15deg);
+    -moz-transform: skewy(-20deg);
+    -ms-transform: skewy(-20deg);
+    -o-transform: skewy(-20deg);
+}
+
+div.landing div.arrow {
+    display: grid;
+    justify-content: center;
+}
+
+div.landing div.arrow {
+    margin: 0px;
+}
+/* end landing */
