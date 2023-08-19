@@ -2,6 +2,7 @@
 html, body {
     font-family: 'Cairo', sans-serif;;
     margin: 0px;
+    scroll-behavior: smooth;
 }
 
 :root {
@@ -27,9 +28,9 @@ header {
     align-items: center;
     background-color: white;
     box-shadow: 0px 1px 7px 0px rgb(205, 205, 205);
-    padding: 0px 130px;
+    padding: 0px 160px;
     justify-content: space-between;
-    position: absolute;
+    position: relative;
     z-index: 2;
     width: 100%;
 }
@@ -58,7 +59,7 @@ header nav ul.mainmenu li {
     height: 80px;
 }
 
-header nav ul.mainmenu li a {
+header nav ul.mainmenu li a:not(header nav ul.mainmenu li div.megamenu ul li a) {
     display: flex;
     align-items: center;
     padding: 0px 20px;
@@ -71,7 +72,7 @@ header nav ul.mainmenu li a {
     position: relative;
 }
 
-header nav ul.mainmenu li a::before {
+header nav ul.mainmenu li a:not(header nav ul.mainmenu li div.megamenu ul li a)::before {
     content: "";
     position: absolute;
     top: 0px;
@@ -80,12 +81,12 @@ header nav ul.mainmenu li a::before {
     background-color: var(--main-blue, blue);
 }
 
-header nav ul.mainmenu li a:hover::before {
+header nav ul.mainmenu li a:not(header nav ul.mainmenu li div.megamenu ul li a):hover::before {
     animation: border-motion .25s both ;
     -webkit-animation: border-motion .25s both ;
 }
 
-header nav ul.mainmenu li a:hover {
+header nav ul.mainmenu li a:not(header nav ul.mainmenu li div.megamenu ul li a):hover {
     color: var(--main-blue, blue);
     background-color: rgb(212, 212, 212);
 }
@@ -94,17 +95,36 @@ header nav ul img {
     width: 250px;
 }
 
-header nav ul li div.megamenu {
-    display: none;
-}
-
-header nav ul li a.megamenu:hover + div.megamenu {
+header nav ul.mainmenu li div.megamenu {
+    /* display: none; */
     display: flex;
     position: absolute;
-    left: 0px;
+    top: 150px;
+    left: 0%;
+    width: 50%;
+    padding: 20px 0px;
+    margin: 0% 25%;
+    justify-content: space-between;
 }
 
-/* start header animation */
+header nav ul.mainmenu li div.megamenu ul {
+}
+
+/* header nav ul li a.megamenu:hover + div.megamenu {
+    display: flex;
+    position: absolute;
+    top: 150px;
+    left: 20px;
+    width: 70%;
+    margin: auto;
+} */
+
+header nav ul.mainmenu li div.megamenu img {
+    width: 350px;
+    height: 350px;
+}
+
+/* start header animations */
 @keyframes border-motion {
     0% {
         width: 0px;
@@ -113,8 +133,15 @@ header nav ul li a.megamenu:hover + div.megamenu {
         width: 100%;
     }
 }
+
+@keyframes pop-up {
+    0% {
+        opacity: 0%;
+
+    }
+}
 /* start header media queries */
-@media (max-width: 772px) {
+@media (max-width: 900px) {
     header {
         padding: 0px 15px;
         width: 100%;
