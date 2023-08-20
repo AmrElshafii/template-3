@@ -161,6 +161,10 @@ header nav ul.mainmenu li div.megamenu img {
 }
 
 /* start landing */
+div.landing {
+    position: relative;
+}
+
 div.landing div.landing-cont {
     display: flex;
     justify-content: center;
@@ -172,13 +176,21 @@ div.landing div.landing-cont {
     margin: auto;
 }
 
-div.landing div.landing-cont::after {
-    content: "";
+div.landing a {
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    color: var(--main-blue, blue);
+}
+
+div.landing div.landing-cont h1 {
+    font-size: 35px;
 }
 
 div.landing div.landing-cont p {
     max-width: 450px;
     margin: 0px 20px 0px 0px;
+    color: gray;
 }
 
 div.landing img {
@@ -203,18 +215,13 @@ div.landing::before {
     -o-transform: skewY(-6deg);
 }
 
-div.landing div.arrow {
-    display: grid;
-    justify-content: center;
-}
-
-div.landing div.arrow {
-    margin: 0px;
-}
-
 @media (max-width: 850px) {
     div.landing div.landing-cont {
         width: 100%;
+    }
+    div.landing div.landing-cont img {
+        width: 250px;
+        height: 250px;
     }
 }
 /* end landing */
