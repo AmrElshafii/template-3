@@ -161,28 +161,29 @@ header nav ul.mainmenu li div.megamenu img {
 }
 
 /* start landing */
-div.landing {
-    height: calc(100vh - 80px);
-}
-
 div.landing div.landing-cont {
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    height: 100%;
-    padding-bottom: 140px;
+    height: calc(100vh - 80px);
+    padding: 0px 20px 140px;
     width: 80%;
     margin: auto;
 }
 
+div.landing div.landing-cont::after {
+    content: "";
+}
+
 div.landing div.landing-cont p {
     max-width: 450px;
+    margin: 0px 20px 0px 0px;
 }
 
 div.landing img {
-    width: 500px;
-    height: 500px;
+    width: 400px;
+    height: 400px;
 }
 
 div.landing::before {
@@ -209,5 +210,11 @@ div.landing div.arrow {
 
 div.landing div.arrow {
     margin: 0px;
+}
+
+@media (max-width: 850px) {
+    div.landing div.landing-cont {
+        width: 100%;
+    }
 }
 /* end landing */
