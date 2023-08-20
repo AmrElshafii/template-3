@@ -162,22 +162,30 @@ header nav ul.mainmenu li div.megamenu img {
 
 /* start landing */
 div.landing {
-    height: 100vh;
+    height: calc(100vh - 80px);
 }
 
 div.landing div.landing-cont {
     display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
-    padding: 60px;
-    height: 90%;
+    height: 100%;
+    padding-bottom: 140px;
+    width: 80%;
+    margin: auto;
+}
+
+div.landing div.landing-cont p {
+    max-width: 450px;
 }
 
 div.landing img {
-    width: 350px;
-    height: 350px;
+    width: 500px;
+    height: 500px;
 }
 
-div.landing div.landing-cont::after {
+div.landing::before {
     content: "";
     position: absolute;
     top: -110px;
@@ -185,12 +193,13 @@ div.landing div.landing-cont::after {
     height: 100%;
     width: 100%;
     z-index: -1;
-    background-color: rgb(212, 212, 212);
-    transform: skewy(-20deg);
-    -webkit-transform: skewy(-15deg);
-    -moz-transform: skewy(-20deg);
-    -ms-transform: skewy(-20deg);
-    -o-transform: skewy(-20deg);
+    background-color: rgb(233, 233, 233);
+    transform: skewY(-6deg);
+    transform-origin: top left;
+    -webkit-transform: skewY(-6deg);
+    -moz-transform: skewY(-6deg);
+    -ms-transform: skewY(-6deg);
+    -o-transform: skewY(-6deg);
 }
 
 div.landing div.arrow {
