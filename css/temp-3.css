@@ -247,29 +247,25 @@ header nav ul.mainmenu li div.megamenu {
     right: 12.5%;
     padding: 30px 30px 10px;
     background-color: rgb(255, 255, 255);
-    z-index: -1;
     gap: 40px;
     top: calc(100% + 50px);
-    opacity: 0%;
-    transition: top .5s, opacity .5s;
-    -webkit-transition: top .5s, opacity .5s;
-    -moz-transition: top .5s, opacity .5s;
-    -ms-transition: top .5s, opacity .5s;
-    -o-transition: top .5s, opacity .5s;
+    opacity: 0;
+    transition: top .5s, opacity .5s, z-index .5s; /* Add z-index transition */
+    -webkit-transition: top .5s, opacity .5s, z-index .5s;
+    -moz-transition: top .5s, opacity .5s, z-index .5s;
+    -ms-transition: top .5s, opacity .5s, z-index .5s;
+    -o-transition: top .5s, opacity .5s, z-index .5s;
     align-items: center;
     border-bottom: #2196f3 solid 2px;
+    pointer-events: none;
+    z-index: -1; /* Set initial z-index to -1 */
 }
 
-header nav ul.mainmenu li a.megamenu:hover + div.megamenu {
+header nav ul.mainmenu li.megamenu:hover div.megamenu {
     top: 100%;
-    opacity: 100%;
-    z-index: 1;
-}
-
-header nav ul.mainmenu li div.megamenu:hover {
-    top: 100%;
-    opacity: 100%;
-    z-index: 1;
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 1; /* Change z-index to 1 on hover */
 }
 
 header nav ul.mainmenu li div.megamenu ul li {
