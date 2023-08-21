@@ -23,7 +23,22 @@ a {
     font-weight: 500;
 }
 
-/* general animations */
+.container {
+    width: 80%;
+    margin: auto;
+}
+
+@media (max-width: 992px) {
+    .container {
+        width: 90%;
+    }
+}
+@media (max-width: 1200px) {
+    .container {
+        width: 100%;
+    }
+}
+
 .title {
     font-size: 30px;
     margin: auto;
@@ -291,7 +306,7 @@ header nav ul.mainmenu li div.megamenu ul li:hover::after{
 
 header nav ul.mainmenu li div.megamenu ul li a {
     color: var(--main-blue);
-    font-size: 17px;
+    font-size: 25px;
     position: relative;
 } 
 
@@ -324,6 +339,17 @@ header nav ul.mainmenu li div.megamenu ul li a i {
     }
 }
 /* start header media queries */
+@media (max-width: 1350px) {
+    header nav ul.mainmenu li div.megamenu ul li a {
+        font-size: 19px;
+    }
+    header nav ul.mainmenu li div.megamenu {
+        gap: 0px;
+        width: 80%;
+        left: 10%;
+    }
+}
+
 @media (max-width: 950px) {
     header {
         padding: 0px 15px;
