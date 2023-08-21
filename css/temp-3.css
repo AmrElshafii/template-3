@@ -22,6 +22,134 @@ a {
     color: black;
     font-weight: 500;
 }
+
+/* general animations */
+.title {
+    font-size: 30px;
+    margin: auto;
+    font-weight: bold;
+    padding: 0px 30px;
+    height: 60px;
+    border: black solid 2px;
+    position: relative;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title:hover {
+    animation: title-animation .25s linear both;
+    -webkit-animation: title-animation .25s linear both;
+    animation-delay: 0.25s;
+}
+
+.title::before {
+    content: "";
+    position: absolute;
+    left: -25px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    background-color: var(--main-blue);
+    z-index: -1;
+}
+
+.title:hover::before {
+    animation: before-animation .25s linear both;
+    -webkit-animation: before-animation .25s linear both;
+}
+
+.title::after {
+    content: "";
+    position: absolute;
+    right: -25px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    background-color: var(--main-blue);
+    z-index: -1;
+}
+
+.title:hover::after {
+    animation: after-animation .25s linear both;
+    -webkit-animation: after-animation .25s linear both;
+}
+
+@keyframes before-animation {
+    0% {
+        left: -25px;
+        width: 12px;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+}
+    50% {
+        left: 0px;
+        border-radius: 50%;
+        width: 12px;
+        height: 12px;
+}
+    100% {
+        left: 0px;
+        width: 50%;
+        height: 100%;
+        border-radius: 0%;
+    }
+}
+
+@keyframes after-animation {
+    0% {
+        right: -25px;
+        width: 12px;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+}
+    50% {
+        right: 0px;
+        border-radius: 50%;
+        width: 12px;
+        height: 12px;
+}
+    100% {
+        right: 0px;
+        width: 50%;
+        height: 100%;
+        border-radius: 0%;
+    } 
+}
+
+@keyframes title-animation {
+    0% {
+        border-width: 2px;
+        background-color: transparent;
+        color: black;
+    }
+    50% {
+        border-width: 0px;
+        background-color: var(--main-blue);
+        color: white;
+    }
+    100% {
+        border-width: 0px;
+        background-color: var(--main-blue);
+        color: white;
+    }
+}
+
 /* start header */
 header {
     display: flex;
@@ -55,8 +183,10 @@ header nav ul.mainmenu {
     margin: 0px;
 }
 
-header nav ul.mainmenu li {
+header nav ul.mainmenu li:not(header nav ul.mainmenu li div.megamenu ul li) {
     height: 80px;
+    font-size: large;
+    text-align: center;
 }
 
 header nav ul.mainmenu li a:not(header nav ul.mainmenu li div.megamenu ul li a) {
@@ -96,23 +226,92 @@ header nav ul img {
 }
 
 header nav ul.mainmenu li div.megamenu {
-    display: none;
-}
-
-header nav ul li a.megamenu:hover + div.megamenu {
     display: flex;
     position: absolute;
-    top: 150px;
-    left: 0%;
-    width: 50%;
-    padding: 20px 0px;
-    margin: 0% 25%;
-    justify-content: space-between;
+    width: 75%;
+    right: 12.5%;
+    padding: 30px 30px 10px;
+    background-color: rgb(255, 255, 255);
+    z-index: -1;
+    gap: 40px;
+    top: calc(100% + 50px);
+    opacity: 0%;
+    transition: top .5s, opacity .5s;
+    -webkit-transition: top .5s, opacity .5s;
+    -moz-transition: top .5s, opacity .5s;
+    -ms-transition: top .5s, opacity .5s;
+    -o-transition: top .5s, opacity .5s;
+    align-items: center;
+    border-bottom: #2196f3 solid 2px;
+}
+
+header nav ul.mainmenu li a.megamenu:hover + div.megamenu {
+    top: 100%;
+    opacity: 100%;
+    z-index: 1;
+}
+
+header nav ul.mainmenu li div.megamenu:hover {
+    top: 100%;
+    opacity: 100%;
+    z-index: 1;
+}
+
+header nav ul.mainmenu li div.megamenu ul li {
+    height: 40px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 30px 0px;
+    border-bottom: var(--main-blue) solid 1px;
+}
+
+header nav ul.mainmenu li div.megamenu ul.links li:last-child {
+    border-bottom: transparent;
+}
+
+header nav ul.mainmenu li div.megamenu ul li::after {
+    content: "";
+    position: absolute;
+    left: 0px;
+    width: 0px;
+    height: 100%;
+    z-index: -1;
+    background-color: rgb(218, 218, 218);
+    transition: all 1s;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -ms-transition: all 1s;
+    -o-transition: all 1s;
+}
+
+header nav ul.mainmenu li div.megamenu ul li:hover::after{
+    width: 100%;
+}
+
+header nav ul.mainmenu li div.megamenu ul li a {
+    color: var(--main-blue);
+    font-size: 17px;
+    position: relative;
+} 
+
+header nav ul.mainmenu li div.megamenu ul li a::before {
+    content: "";
+    position: absolute;
 }
 
 header nav ul.mainmenu li div.megamenu img {
-    width: 350px;
-    height: 350px;
+    width: 250px;
+    height: 250px;
+}
+
+header nav ul.mainmenu li div.megamenu .links {
+    min-width: 200px;
+    flex: 1;
+}
+
+header nav ul.mainmenu li div.megamenu ul li a i {
+    margin: 5px;
 }
 
 /* start header animations */
@@ -124,18 +323,21 @@ header nav ul.mainmenu li div.megamenu img {
         width: 100%;
     }
 }
-
-@keyframes pop-up {
-    0% {
-        opacity: 0%;
-
-    }
-}
 /* start header media queries */
-@media (max-width: 900px) {
+@media (max-width: 950px) {
     header {
         padding: 0px 15px;
         width: 100%;
+    }
+    header nav ul.mainmenu li div.megamenu {
+        left: 5%;
+        width: 90%;
+    }
+    header nav ul.mainmenu li div.megamenu ul li a {
+        font-size: 20px;
+    }
+    header nav ul.mainmenu li div.megamenu img {
+        display: none;
     }
 }
 
@@ -143,7 +345,7 @@ header nav ul.mainmenu li div.megamenu img {
     header {
         display: grid;
         justify-content: center;
-        padding: 5px 15px 0px;
+        padding: 10px 15px 0px;
         row-gap: 5px;
     }
     header p.logo {
@@ -152,11 +354,28 @@ header nav ul.mainmenu li div.megamenu img {
     header nav ul.mainmenu li {
         height: 50px;
     }
+    header nav ul.mainmenu li div.megamenu ul.links:first-of-type li:last-child {
+        border-bottom: var(--main-blue) solid 1px;
+    }
+    header nav ul.mainmenu li div.megamenu {
+        display: grid;
+        padding: 5px 20px 5px 0px;
+        gap: 0px;
+    }
 }
 
-@media (max-width: 330px) {
+@media (max-width: 450px) {
     header nav ul.mainmenu li {
         margin: 0px 7px;
+    }
+    header {
+        padding: 5px 0px 0px;
+    }
+    header nav ul.mainmenu {
+        padding: 0px;
+    }
+    header nav ul.mainmenu li a:not(header nav ul.mainmenu li div.megamenu ul li a) {
+        padding: 0px;
     }
 }
 
@@ -170,7 +389,7 @@ div.landing div.landing-cont {
     justify-content: center;
     align-items: center;
     position: relative;
-    height: calc(100vh - 80px);
+    height: 100vh;
     padding: 0px 20px 140px;
     width: 80%;
     margin: auto;
@@ -181,6 +400,14 @@ div.landing a {
     bottom: 100px;
     left: 50%;
     color: var(--main-blue, blue);
+    animation-name: arrow-up;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+div.landing a:hover {
+    animation-play-state: paused;
 }
 
 div.landing div.landing-cont h1 {
@@ -194,8 +421,11 @@ div.landing div.landing-cont p {
 }
 
 div.landing img {
-    width: 400px;
-    height: 400px;
+    width: 300px;
+    height: 300px;
+    position: relative;
+    animation: up-down 7s linear infinite;
+    -webkit-animation: up-down 7s linear infinite;
 }
 
 div.landing::before {
@@ -215,6 +445,35 @@ div.landing::before {
     -o-transform: skewY(-6deg);
 }
 
+/* start landnding animations */
+@keyframes arrow-up {
+    0% {
+        bottom: 100px;
+    }
+    50% {
+        bottom: 110px;
+    }
+    100% {
+        bottom: 100px;
+    }
+}
+
+@keyframes up-down {
+    0% {
+        top: 0px;
+    }
+    33% {
+        top: -30px;
+    }
+    66% {
+        top: 30px;
+    }
+    100% {
+        top: 0px;
+    }
+}
+/* end landnding animations */
+
 @media (max-width: 850px) {
     div.landing div.landing-cont {
         width: 100%;
@@ -222,6 +481,15 @@ div.landing::before {
     div.landing div.landing-cont img {
         width: 250px;
         height: 250px;
+    }
+}
+
+@media (max-width: 560px) {
+    .landing {
+        text-align: center;
+    }
+    .landing img {
+        display: none;
     }
 }
 /* end landing */
