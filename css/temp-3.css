@@ -9,7 +9,10 @@ html, body {
     --main-blue: #2196f3;
     --section-padding: 100px;
     --text-padding:10px;
-    --background-color: rgb(244, 244, 244);
+    --background-color: rgb(236, 236, 236);
+    --sec-red: #f44036;
+    --sec-green: #009688;
+    --sec-blue: #03a9f4;
 }
 
 * {
@@ -689,3 +692,287 @@ div.landing::before {
     }
 }
 /* end gallery */
+
+/* start feature */
+.features {
+    padding: var(--section-padding) var(--text-padding);
+}
+
+.features .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+}
+
+.features .box {
+    border: rgb(189, 189, 189) solid 1px;
+    overflow: hidden;
+}
+
+.features .image img {
+    width: 100%;
+}
+
+.features .image {
+    position: relative;
+}
+
+.features .image::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+}
+
+.features .quality .image::before {
+    background-color: var(--sec-red);
+}
+
+.features .time .image::before {
+    background-color: var(--sec-green);
+}
+
+.features .passion .image::before {
+    background-color: var(--sec-blue);
+}
+
+.features .image::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    right: 0px;
+    width: 110%;
+    height: 40%;
+    background-color: white;
+    clip-path: polygon(100% 0%, 0% 100%, 100% 100%);
+    transition: all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    -o-transition: all .5s;
+}
+
+.features .box:hover .image::after {
+    clip-path: polygon(0% 0%, 0% 100%, 100% 100%);
+}
+
+.features .text {
+    text-align: center;
+    padding: 10px 20px;
+}
+
+.features .text h3 {
+    position: relative;
+    text-transform: capitalize;
+    font-size: 40px;
+    width: fit-content;
+    margin: 20px auto 40px;
+}
+
+.features  .text h3::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 10%;
+    width: 80%;
+    height: 5px;
+}
+
+.features .quality .text h3::after {
+    background-color: var(--sec-red);
+}
+.features .time .text h3::after {
+    background-color: var(--sec-green);
+}
+.features .passion .text h3::after {
+    background-color: var(--sec-blue);
+}
+
+.features .text p {
+    color: gray;
+    line-height: 2;
+}
+
+.features a {
+    display: block;
+    width: fit-content;
+    margin: 0px auto 30px;
+    text-transform: capitalize;
+    padding: 10px 25px;
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    transition: all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    -o-transition: all .5s;
+    position: relative;
+}
+
+.features a::after {
+    content: "";
+    width: 0%;
+    height: 100%;
+    transition: all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    -o-transition: all .5s;
+    display: block;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
+}
+
+.features .box:hover a {
+    color: white;
+}
+
+.features .quality.box:hover a::after {
+    background-color: var(--sec-red);
+    width: 100%;
+}
+
+.features .time.box:hover a::after {
+    background-color: var(--sec-green);
+    width: 100%;
+}
+
+.features .passion.box:hover a::after {
+    background-color: var(--sec-blue);
+    width: 100%;
+}
+
+.features .quality a {
+    border: var(--sec-red) solid 3px;
+    color: var(--sec-red);
+}
+
+.features .time a {
+    border: var(--sec-green) solid 3px;
+    color: var(--sec-green);
+}
+
+.features .passion a {
+    border: var(--sec-blue) solid 3px;
+    color: var(--sec-blue);
+}
+/* end feature */
+
+/* start testimonials */
+.testimonials {
+    background-color: var(--background-color);
+    padding: var(--section-padding) var(--text-padding);
+}
+
+.testimonials .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 60px 40px;
+}
+
+.testimonials .box {
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+    background-color: white;
+    padding: 20px 20px 5px;
+    position: relative;
+    box-shadow: 0px 2px 2px 0px rgb(128 128 128 / 20%);
+    transition: all .3s;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -ms-transition: all .3s;
+    -o-transition: all .3s;
+}
+
+.testimonials .box:hover {
+    transform: translatey(-10px);
+    -webkit-transform: translatey(-10px);
+    -moz-transform: translatey(-10px);
+    -ms-transform: translatey(-10px);
+    -o-transform: translatey(-10px);
+}
+
+.testimonials img {
+    position: absolute;
+    top: -50px;
+    right: -10px;
+    width: 100px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border: var(--background-color) solid 10px;
+}
+
+.testimonials h3 {
+    margin: 0px 0px 15px;
+}
+
+.testimonials .job-title {
+    color: gray;
+}
+
+.testimonials .rate {
+    margin: 10px 0px 0px;
+}
+
+.testimonials .rate .filled {
+    color: #ffc107;
+}
+
+.testimonials p {
+    color: gray;
+    line-height: 1.5;
+    margin: 5px 0px;
+}
+/* end testimonials */
+
+/* start team members */
+.team {
+    padding: var(--section-padding) var(--text-padding);
+}
+
+.team .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.team .box {
+    position: relative;
+}
+
+.team .box::before {}
+
+.team .box::after {}
+
+.team .data {}
+
+.team img {
+    width: calc(100% - 50px);
+}
+
+.team .social {}
+
+.team .social a {}
+
+.team .info {}
+
+.team h3 {}
+
+.team p {}
+/* end team members */
