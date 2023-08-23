@@ -9,6 +9,7 @@ html, body {
     --main-blue: #2196f3;
     --section-padding: 100px;
     --text-padding:10px;
+    --background-color: rgb(244, 244, 244);
 }
 
 * {
@@ -59,6 +60,7 @@ a {
     align-items: center;
     justify-content: center;
     text-transform: uppercase;
+    z-index: 2;
 }
 
 .title:hover {
@@ -602,11 +604,88 @@ div.landing::before {
     0% {
         left: 0px;
     }
-    50% {
-        left: 8px;
+    33% {
+        left: 4px;
+    }
+    66% {
+        left: -2px;
     }
     100% {
         left: 0px;
     }
 }
 /* end articles */
+
+/* start gallery */
+.gallery {
+    padding: var(--section-padding) var(--text-padding);
+    background-color: var(--background-color);
+}
+
+.gallery .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.gallery .box {
+    padding: 10px;
+    background-color: white;
+}
+
+.gallery .image {
+    overflow: hidden;
+    position: relative;
+}
+
+.gallery img {
+    width: 100%;
+    transition: all .25s linear;
+    -webkit-transition: all .25s linear;
+    -moz-transition: all .25s linear;
+    -ms-transition: all .25s linear;
+    -o-transition: all .25s linear;
+}
+
+.gallery .image::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    width: 0%;
+    height: 0%;
+    background-color: rgb(239 239 239 / 15%);
+}
+
+.gallery .box:hover .image::after {
+    animation: flash 0.5s linear ;
+    -webkit-animation: flash 0.5s linear ;
+}
+
+.gallery .box:hover img {
+    transform: rotate(3deg) scale(1.1);
+    -webkit-transform: rotate(3deg) scale(1.1);
+    -moz-transform: rotate(3deg) scale(1.1);
+    -ms-transform: rotate(3deg) scale(1.1);
+    -o-transform: rotate(3deg) scale(1.1);
+}
+
+@keyframes flash {
+    0% {
+        width: 0%;
+        height: 0%;
+    }
+    50% {
+        width: 200%;
+        height: 200%;
+    }
+    100% {
+        background-color: transparent;
+    }
+}
+/* end gallery */
