@@ -455,8 +455,8 @@ div.landing div.landing-cont p {
 }
 
 div.landing img {
-    width: 300px;
-    height: 300px;
+    width: 500px;
+    height: 500px;
     position: relative;
     animation: up-down 7s linear infinite;
     -webkit-animation: up-down 7s linear infinite;
@@ -508,7 +508,7 @@ div.landing::before {
 }
 /* end landnding animations */
 
-@media (max-width: 850px) {
+@media (max-width: 950px) {
     div.landing div.landing-cont {
         width: 100%;
     }
@@ -524,6 +524,9 @@ div.landing::before {
     }
     .landing img {
         display: none;
+    }
+    ul.mainmenu {
+        padding: 0px;
     }
 }
 /* end landing */
@@ -689,3 +692,60 @@ div.landing::before {
     }
 }
 /* end gallery */
+
+/* start feature */
+.features {
+    padding: var(--section-padding) var(--text-padding);
+}
+
+.features .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.features .box {
+    border: rgb(189, 189, 189) solid 1px;
+}
+
+.features .image img {
+    width: 100%;
+}
+
+.features .image img::before {}
+
+.features .image img::after {}
+
+.features .box:hover image img::after {}
+
+.features .text {
+    text-align: center;
+    padding: 10px 20px;
+}
+
+.features .text h3 {
+    position: relative;
+    text-transform: capitalize;
+    font-size: 40px;
+    width: fit-content;
+}
+
+.features .text h3::after {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 10%;
+    width: 40%;
+    height: 3px;
+    background-color: #2196f3;
+}
+
+.features .text p {}
+
+.features a {
+    display: block;
+    width: fit-content;
+    margin: 0px auto 30px;
+    text-transform: capitalize;
+}
+/* end feature */
