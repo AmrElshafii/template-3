@@ -250,7 +250,7 @@ header nav ul.mainmenu li a:not(header nav ul.mainmenu li div.megamenu ul li a):
 }
 
 header nav ul img {
-    width: 250px;
+    width: 350px;
 }
 
 header nav ul.mainmenu li div.megamenu {
@@ -325,13 +325,14 @@ header nav ul.mainmenu li div.megamenu ul li a::before {
 }
 
 header nav ul.mainmenu li div.megamenu img {
-    width: 250px;
-    height: 250px;
+    max-width: 100%;
 }
 
 header nav ul.mainmenu li div.megamenu .links {
     min-width: 200px;
     flex: 1;
+    padding: 0px;
+    margin: 10px;
 }
 
 header nav ul.mainmenu li div.megamenu ul li a i {
@@ -446,7 +447,7 @@ div.landing a:hover {
 }
 
 div.landing div.landing-cont h1 {
-    font-size: 35px;
+    font-size: 40px;
 }
 
 div.landing div.landing-cont p {
@@ -458,8 +459,7 @@ div.landing div.landing-cont p {
 }
 
 div.landing img {
-    width: 300px;
-    height: 300px;
+    width: 550px;
     position: relative;
     animation: up-down 7s linear infinite;
     -webkit-animation: up-down 7s linear infinite;
@@ -499,11 +499,8 @@ div.landing::before {
     0% {
         top: 0px;
     }
-    33% {
-        top: -30px;
-    }
-    66% {
-        top: 30px;
+    50% {
+        top: -60px;
     }
     100% {
         top: 0px;
@@ -511,18 +508,9 @@ div.landing::before {
 }
 /* end landnding animations */
 
-@media (max-width: 850px) {
+@media (max-width: 1000px) {
     div.landing div.landing-cont {
         width: 100%;
-    }
-    div.landing div.landing-cont img {
-        width: 250px;
-        height: 250px;
-    }
-}
-
-@media (max-width: 560px) {
-    .landing {
         text-align: center;
     }
     .landing img {
@@ -948,31 +936,100 @@ div.landing::before {
 
 .team .container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
 }
 
 .team .box {
     position: relative;
+    padding: 50px 0px 0px 0px;
 }
 
-.team .box::before {}
+.team .box::before {
+    content: "";
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    z-index: -1;
+    width: 80%;
+    height: 100%;
+    background-color: #f3f3f3;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+}
 
-.team .box::after {}
+.team .box::after {
+    content: "";
+    width: 0%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    border-radius: 15px;
+    background-color: #e4e4e4;
+    z-index: -1;
+    transition: all .25s;
+    -webkit-transition: all .25s;
+    -moz-transition: all .25s;
+    -ms-transition: all .25s;
+    -o-transition: all .25s;
+}
 
-.team .data {}
+.team .box:hover:after {
+    width: 80%;
+}
+
+.team .data {
+    display: flex;
+}
 
 .team img {
     width: calc(100% - 50px);
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    transition: all .25s;
+    -webkit-transition: all .25s;
+    -moz-transition: all .25s;
+    -ms-transition: all .25s;
+    -o-transition: all .25s;
 }
 
-.team .social {}
+.team .box:hover img {
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+}
 
-.team .social a {}
+.team .social {
+    display: grid;
+    align-content: space-evenly;
+    justify-content: center;
+    flex-grow: 1;
+}
 
-.team .info {}
+.team .social a:hover {
+    color: var(--main-blue);
+}
 
-.team h3 {}
+.team .info {
+    padding-left: calc(20% + 20px);
+}
 
-.team p {}
+.team h3 {
+    color: var(--main-blue);
+    transition: all .25s;
+    -webkit-transition: all .25s;
+    -moz-transition: all .25s;
+    -ms-transition: all .25s;
+    -o-transition: all .25s;
+}
+
+.team .box:hover h3 {
+    color: #777;
+}
 /* end team members */
