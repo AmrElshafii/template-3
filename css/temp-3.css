@@ -381,7 +381,7 @@ header nav ul.mainmenu li div.megamenu ul li a i {
     header {
         display: grid;
         justify-content: center;
-        padding: 10px 15px 0px;
+        padding: 15px 15px 0px;
         row-gap: 5px;
     }
     header p.logo {
@@ -397,6 +397,11 @@ header nav ul.mainmenu li div.megamenu ul li a i {
         display: grid;
         padding: 5px 20px 5px 0px;
         gap: 0px;
+    }header nav ul.mainmenu li div.megamenu .links {
+        margin: 0px 15px;
+    }
+    header nav ul {
+        padding: 0px;
     }
 }
 
@@ -420,14 +425,13 @@ div.landing {
     position: relative;
 }
 
-div.landing div.landing-cont {
+div.landing div.container {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     position: relative;
     height: 100vh;
     padding: 0px 10px 140px;
-    width: 80%;
     margin: auto;
 }
 
@@ -450,7 +454,7 @@ div.landing div.landing-cont h1 {
     font-size: 40px;
 }
 
-div.landing div.landing-cont p {
+div.landing div.container p {
     max-width: 450px;
     margin: 0px 20px 0px 0px;
     color: gray;
@@ -509,7 +513,7 @@ div.landing::before {
 /* end landnding animations */
 
 @media (max-width: 1000px) {
-    div.landing div.landing-cont {
+    div.landing div.container {
         width: 100%;
         text-align: center;
     }
@@ -556,8 +560,8 @@ div.landing::before {
 }
 
 .articles .box:hover .link i {
-    animation: arrow-left 1s infinite linear;
-    -webkit-animation: arrow-left 1s infinite linear;
+    animation: arrow-left 1.5s infinite linear;
+    -webkit-animation: arrow-left 1.5s infinite linear;
     position: relative;
 }
 
@@ -599,7 +603,7 @@ div.landing::before {
         left: 4px;
     }
     66% {
-        left: -2px;
+        left: -4px;
     }
     100% {
         left: 0px;
@@ -1033,3 +1037,104 @@ div.landing::before {
     color: #777;
 }
 /* end team members */
+/* start services */
+.services {
+    padding: var(--section-padding) var(--text-padding);
+    background-color: var(--background-color);
+}
+
+.services .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.services .box {
+    background-color: white;
+    position: relative;
+    counter-increment: services;
+}
+
+.services .box::before {
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: 50%;
+    width: 0%;
+    height: 4px;
+    transform: translate(-50%);
+    background-color: var(--main-blue);
+    transition: .5s;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+    -webkit-transform: translate(-50%);
+    -moz-transform: translate(-50%);
+    -ms-transform: translate(-50%);
+    -o-transform: translate(-50%);
+}
+
+.services .box:hover::before {
+    width: 100%;
+}
+
+.services i {
+    color: rgb(213, 213, 213);
+    display: block;
+    width: fit-content;
+    margin: 30px auto 20px;
+}
+
+.services h3 {
+    text-align: center;
+    color: var(--main-blue);
+    font-size: 30px;
+}
+
+.services .link {
+    width: 100%;
+    padding: 15px 20px;
+    background-color: rgb(245, 245, 245);
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.services .link::before {
+    content: "0" counter(services);
+    background-color: var(--main-blue);
+    width: 80px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    padding-right: 20px;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.services .link::after {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 80px;
+    width: 40px;
+    height: 100%;
+    background-color: #d5d5d5;
+    transform: skew(-15deg);
+    -webkit-transform: skew(-15deg);
+    -moz-transform: skew(-15deg);
+    -ms-transform: skew(-15deg);
+    -o-transform: skew(-15deg);
+}
+
+.services .link a {
+    color: var(--main-blue);
+    font-size: 20px;
+}
+/* end services */
