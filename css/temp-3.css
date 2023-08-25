@@ -1053,6 +1053,19 @@ div.landing::before {
     background-color: white;
     position: relative;
     counter-increment: services;
+    transition: all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    -o-transition: all .5s;
+}
+
+.services .box:hover {
+    transform: translate(0px, -20px);
+    -webkit-transform: translate(0px, -20px);
+    -moz-transform: translate(0px, -20px);
+    -ms-transform: translate(0px, -20px);
+    -o-transform: translate(0px, -20px);
 }
 
 .services .box::before {
