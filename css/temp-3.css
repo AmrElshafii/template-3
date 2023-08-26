@@ -1151,3 +1151,79 @@ div.landing::before {
     font-size: 20px;
 }
 /* end services */
+/* start our-skills */
+.our-skills {
+    padding: var(--section-padding) var(--text-padding);
+}
+
+.our-skills .container {
+    display: flex;
+    align-items: center;
+}
+
+.our-skills .box {}
+
+.our-skills .skills {
+    flex: 1;
+}
+
+.our-skills .head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.our-skills .head h3 {
+    text-transform: uppercase;
+}
+
+.our-skills .head span {
+    border: #ccc solid 1px;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    padding: 2px 5px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--main-blue);
+}
+
+.our-skills div.rec {
+    height: 25px;
+    background-color: #eee;
+    position: relative;
+}
+
+.our-skills div.rec::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    background-color: var(--main-blue);
+}
+
+.our-skills .html::before {
+    width: 80%;
+}
+
+.our-skills .css::before {
+    width: 85%;
+}
+
+.our-skills .js::before {
+    width: 70%;
+}
+
+.our-skills .py::before {
+    width: 80%;
+}
+
+@media (max-width: 992px) {
+    .our-skills img {
+        display: none;
+    }
+}
+/* end our-skills */
