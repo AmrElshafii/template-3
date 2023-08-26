@@ -450,16 +450,17 @@ div.landing a:hover {
     animation-play-state: paused;
 }
 
-div.landing div.landing-cont h1 {
+div.landing .container h1 {
     font-size: 40px;
+    margin: 0px;
 }
 
 div.landing div.container p {
     max-width: 450px;
-    margin: 0px 20px 0px 0px;
+    margin: 5px 20px 0px 0px;
     color: gray;
     font-size: 25px;
-    line-height: 1.5;
+    line-height: 1.7;
 }
 
 div.landing img {
@@ -1162,8 +1163,6 @@ div.landing::before {
     display: flex;
     align-items: center;
 }
-
-.our-skills .box {}
 
 .our-skills .skills {
     flex: 1;
