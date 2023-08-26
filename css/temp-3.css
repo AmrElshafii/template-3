@@ -180,15 +180,16 @@ a {
 
 /* start header */
 header {
-    display: flex;
-    align-items: center;
     background-color: white;
     box-shadow: 0px 1px 7px 0px rgb(205, 205, 205);
-    padding: 0px 160px;
-    justify-content: space-between;
-    position: relative;
-    z-index: 2;
     width: 100%;
+}
+
+header .container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0px 160px;
 }
 
 header p.logo {
@@ -197,6 +198,8 @@ header p.logo {
     font-weight: 700;
     margin: 0px;
     text-align: center;
+    justify-content: space-between;
+    z-index: 2;
 }
 
 header nav {
@@ -256,11 +259,11 @@ header nav ul img {
 header nav ul.mainmenu li div.megamenu {
     display: flex;
     position: absolute;
-    width: 75%;
-    right: 12.5%;
+    width: 80%;
+    left: 10%;
     padding: 30px 30px 10px;
     background-color: rgb(255, 255, 255);
-    gap: 40px;
+    gap: 30px;
     top: calc(100% + 50px);
     opacity: 0;
     transition: top .5s, opacity .5s, z-index .5s; /* Add z-index transition */
@@ -315,8 +318,11 @@ header nav ul.mainmenu li div.megamenu ul li:hover::after{
 
 header nav ul.mainmenu li div.megamenu ul li a {
     color: var(--main-blue);
-    font-size: 25px;
+    font-size: 20px;
+    font-weight: bold;
     position: relative;
+    width: 100%;
+    text-align: left;
 } 
 
 header nav ul.mainmenu li div.megamenu ul li a::before {
@@ -349,22 +355,15 @@ header nav ul.mainmenu li div.megamenu ul li a i {
     }
 }
 /* start header media queries */
-@media (max-width: 1350px) {
-    header nav ul.mainmenu li div.megamenu ul li a {
-        font-size: 19px;
+@media (max-width: 1200px) {
+    header .container div.megamenu {
+        gap: 5px;
     }
-    header nav ul.mainmenu li div.megamenu {
-        gap: 0px;
-        width: 80%;
-        left: 10%;
+    header .container div.megamenu img {
+        display: none;
     }
 }
-
-@media (max-width: 950px) {
-    header {
-        padding: 0px 15px;
-        width: 100%;
-    }
+@media (max-width: 992px) {
     header nav ul.mainmenu li div.megamenu {
         left: 5%;
         width: 90%;
@@ -375,10 +374,13 @@ header nav ul.mainmenu li div.megamenu ul li a i {
     header nav ul.mainmenu li div.megamenu img {
         display: none;
     }
+    header .container {
+        padding: 0px 10px;
+    }
 }
 
 @media (max-width: 560px) {
-    header {
+    header .container {
         display: grid;
         justify-content: center;
         padding: 15px 15px 0px;
@@ -408,9 +410,6 @@ header nav ul.mainmenu li div.megamenu ul li a i {
 @media (max-width: 450px) {
     header nav ul.mainmenu li {
         margin: 0px 7px;
-    }
-    header {
-        padding: 5px 0px 0px;
     }
     header nav ul.mainmenu {
         padding: 0px;
@@ -1315,8 +1314,23 @@ div.landing::before {
 }
 
 @media (max-width: 992px) {
+    .work-steps .container {
+        display: grid;
+        justify-items: center;
+        gap: 50px;
+    }
     .work-steps .container > img {
-        display: none;
+        margin: 0px;
+    }
+}
+
+@media (max-width: 992px) {
+    .work-steps .box {
+        flex-direction: column;
+        text-align: center;
+    }
+    .work-steps .box img {
+        margin: 0px 0px 20px;
     }
 }
 /* end work steps */
