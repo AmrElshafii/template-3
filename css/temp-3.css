@@ -34,6 +34,7 @@ a {
     .container {
         width: 750px;
         margin: auto;
+        max-width: 100%;
     }
 }
 /* Medium */
@@ -41,6 +42,7 @@ a {
     .container {
         width: 970px;
         margin: auto;
+        max-width: 100%;
     }
 }
 /* Large */
@@ -48,6 +50,7 @@ a {
     .container {
         width: 1170px;
         margin: auto;
+        max-width: 100%;
     }
 }
 
@@ -189,7 +192,7 @@ header .container {
     position: relative;
     display: flex;
     align-items: center;
-    padding: 0px 160px;
+    padding: 0px 20px;
 }
 
 header p.logo {
@@ -231,6 +234,7 @@ header nav ul.mainmenu li a:not(header nav ul.mainmenu li div.megamenu ul li a) 
     -o-transition: all .25s linear 0s;
     height: 100%;
     position: relative;
+    font-size: 20px;
 }
 
 header nav ul.mainmenu li a:not(header nav ul.mainmenu li div.megamenu ul li a)::before {
@@ -379,7 +383,7 @@ header nav ul.mainmenu li div.megamenu ul li a i {
     }
 }
 
-@media (max-width: 560px) {
+@media (max-width: 768px) {
     header .container {
         display: grid;
         justify-content: center;
@@ -407,7 +411,7 @@ header nav ul.mainmenu li div.megamenu ul li a i {
     }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 500px) {
     header nav ul.mainmenu li {
         margin: 0px 7px;
     }
@@ -526,12 +530,12 @@ div.landing::before {
 
 /* start articles */
 .articles {
-    padding: var(--section-padding) 20px;
+    padding: var(--section-padding) var(--text-padding);
 }
 
 .articles .container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 40px;
 }
 
@@ -1321,6 +1325,7 @@ div.landing::before {
     }
     .work-steps .container > img {
         margin: 0px;
+        width: 300px;
     }
 }
 
