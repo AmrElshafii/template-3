@@ -1507,3 +1507,160 @@ div.landing::before {
 }
 }
 /* end events */
+/* start pricing */
+.pricing {
+    background-color: var(--background-color);
+    padding: var(--section-padding) var(--text-padding);
+}
+
+.pricing .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.pricing .box {
+    background-color: white;
+    position: relative;
+    z-index: 1;
+}
+
+.pricing .box::before {
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 0%;
+    height: 50%;
+    background-color: #f6f6f6;
+    transition: .25s;
+    -webkit-transition: .25s;
+    -moz-transition: .25s;
+    -ms-transition: .25s;
+    -o-transition: .25s;
+    z-index: -1;
+}
+
+.pricing .box:hover:before {
+    width: 100%;
+}
+
+.pricing .box::after {
+    content: "";
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    width: 0%;
+    height: 50%;
+    background-color: #f6f6f6;
+    transition: .25s;
+    -webkit-transition: .25s;
+    -moz-transition: .25s;
+    -ms-transition: .25s;
+    -o-transition: .25s;
+    z-index: -1;
+}
+
+.pricing .box:hover::after {
+    width: 100%;
+}
+
+.pricing .box .label {
+    position: absolute;
+    right: -30px;
+    top: 45px;
+    background-color: var(--main-blue);
+    color: white;
+    padding: 10px 30px 10px 10px;
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    font-weight: bold;
+}
+
+.pricing .box .label::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-style: solid;
+    border-color: transparent transparent white;
+    border-width: 20px;
+    transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+}
+
+.pricing .box p.subscription {
+    font-size: 25px;
+    margin: 30px 0px;
+    text-align: center;
+    text-transform: capitalize;
+    font-weight: bold;
+}
+
+.pricing .box img {
+    width: 150px;
+    display: block;
+    margin: auto;
+}
+
+.pricing .box p.price {
+    text-align: center;
+    font-size: 45px;
+    color: var(--main-blue);
+    font-weight: bold;
+    margin-bottom: 0px;
+}
+
+.pricing .box p.per {
+    margin: 10px 0px;
+    text-align: center;
+}
+
+.pricing .box ul.advan {
+    padding: 0px;
+}
+
+.pricing .box ul.advan li {
+    padding: 20px;
+    display: block;
+    border-top: 1px solid #eee;
+}
+
+.pricing .box ul.advan i {
+    color: var(--main-blue);
+}
+
+.pricing .box ul.advan span {
+    margin-left: 10px;
+}
+
+.pricing .box a {
+    display: block;
+    display: block;
+    width: fit-content;
+    border: 2px solid var(--main-blue);
+    margin: 40px auto;
+    padding: 15px 20px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--main-blue);
+    text-transform: capitalize;
+    transition: .25s;
+    -webkit-transition: .25s;
+    -moz-transition: .25s;
+    -ms-transition: .25s;
+    -o-transition: .25s;
+}
+
+.pricing .box a:hover {
+    background-color: var(--main-blue);
+    color: white;
+}
+/* end pricing */
