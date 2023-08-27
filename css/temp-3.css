@@ -1469,30 +1469,34 @@ div.landing::before {
     }
 }
 @media (max-width: 650px) {
-    .events form {
-        flex-direction: column;
-        width: 100%;
-    }
     .events .form {
         margin: 0px;
+        width: 100%;
     }
     .events form {
+        flex-direction: column;
+        justify-content: flex-start;
         border-radius: 0px;
         -webkit-border-radius: 0px;
         -moz-border-radius: 0px;
         -ms-border-radius: 0px;
         -o-border-radius: 0px;
         margin: 40px 0px;
+        width: 100%;
     }
     .events form input {
         flex: 1;
         margin: 10px 0px;
+        display: block;
+}
+    .events form input[type = "email"] {
         border-radius: 0px;
         -webkit-border-radius: 0px;
         -moz-border-radius: 0px;
         -ms-border-radius: 0px;
         -o-border-radius: 0px;
-}
+        font-size: 15px;
+    }
     .events form input[type = "submit"] {
         border-radius: 0px;
         -webkit-border-radius: 0px;
