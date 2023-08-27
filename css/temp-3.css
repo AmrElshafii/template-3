@@ -1729,10 +1729,15 @@ div.landing::before {
 
 .video .list ul li p {
     margin: 0px;
+    transition: .25s;
+    -webkit-transition: .25s;
+    -moz-transition: .25s;
+    -ms-transition: .25s;
+    -o-transition: .25s;
 }
 
 .video .list ul li span {
-    margin-top: 20px;
+    margin-top: 10px;
     display: block;
     color: gray;
 }
@@ -1760,3 +1765,98 @@ div.landing::before {
     }
 }
 /* end video */
+/* start stats */
+.stats {
+    background-image: url(../temp/elzero-web_files/stats.jpg);
+    padding: var(--section-padding) var(--text-padding);
+    position: relative;
+    background-size: cover;
+    z-index: 1;
+}
+
+.stats::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255 255 255 / 95%);
+    z-index: -1;
+}
+
+.stats h2 {
+    width: fit-content;
+    margin: 0px auto 50px;
+    font-size: 40px;
+}
+
+.stats .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.stats .box {
+    background-color: white;
+    padding: 30px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.stats .box i {
+    font-size: 40px;
+}
+
+.stats .box p {
+    font-size: 50px;
+    font-weight: bold;
+    margin: 15px 0px;
+}
+
+.stats .box span {
+    color: var(--main-blue);
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.stats .box::before {
+    content: "";
+    width: 3px;
+    height: 0%;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    background-color: var(--main-blue);
+    transition: .5s;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+}
+
+.stats .box:hover::before {
+    height: 100%;
+}
+
+.stats .box::after {
+    content: "";
+    width: 3px;
+    height: 0%;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    background-color: var(--main-blue);
+    transition: .5s;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+}
+
+.stats .box:hover::after {
+    height: 100%;
+}
+/* end stats */
