@@ -745,10 +745,10 @@ div.landing::before {
 .features .image::after {
     content: "";
     position: absolute;
-    bottom: -5px;
-    right: 0px;
-    width: 110%;
-    height: 40%;
+    bottom: -2px;
+    right: -13px;
+    width: 120%;
+    height: 50%;
     background-color: white;
     clip-path: polygon(100% 0%, 0% 100%, 100% 100%);
     transition: all .5s;
