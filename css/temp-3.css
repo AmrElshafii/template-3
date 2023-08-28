@@ -5,7 +5,13 @@ html, body {
     scroll-behavior: smooth;
 }
 
-input {
+@media (max-width: 410px) {
+    html, body {
+        width: fit-content;
+    }
+}
+
+input:focus {
     outline: none;
 }
 
@@ -1898,7 +1904,7 @@ div.landing::before {
     color: white;
     display: flex;
     align-items: flex-end;
-    margin: 10px;
+    margin: 50px 0px 10px;
 }
 
 .discount p {
