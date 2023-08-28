@@ -1338,6 +1338,9 @@ div.landing::before {
     .work-steps .box img {
         margin: 0px 0px 20px;
     }
+    .work-steps .box .text {
+        margin: 0px;
+    }
 }
 /* end work steps */
 /* start events */
