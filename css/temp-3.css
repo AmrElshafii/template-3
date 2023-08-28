@@ -1895,7 +1895,7 @@ div.landing::before {
     color: white;
     display: flex;
     align-items: flex-end;
-    margin: 0px;
+    margin: 10px;
 }
 
 .discount p {
