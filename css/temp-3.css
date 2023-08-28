@@ -2032,7 +2032,9 @@ footer .box p.text {
 }
 /* end first box */
 /* start second box */
-footer .box ul.links {}
+footer .box ul.links {
+    padding: 0px;
+}
 
 footer .box ul.links li {
     border-bottom: 1px solid #444;
