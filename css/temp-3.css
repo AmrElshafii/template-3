@@ -1893,6 +1893,9 @@ div.landing::before {
 .discount .image h2 {
     font-size: 40px;
     color: white;
+    display: flex;
+    align-items: flex-end;
+    margin: 0px;
 }
 
 .discount p {
