@@ -2011,6 +2011,7 @@ footer .box ul.social li a {
     -moz-transition: .25s;
     -ms-transition: .25s;
     -o-transition: .25s;
+    color: white;
 }
 
 footer .box ul.social a.facebook:hover {
